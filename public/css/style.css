@@ -1,3 +1,13 @@
 body{
-    background-color: hotpink;
+    background-color: yellow;
+    color: limegreen;
+    background-image: url(../img/example1.png);
+}
+button{
+    background-color: rgb(252, 162, 252);
+    color: cyan
+}
+input{
+    background-color: rgb(255, 165, 0);
+    color: yellow;
 }
