@@ -7,14 +7,14 @@ head
 body
     h1 Simple TODO APP
     p Add your TODO items here
-    form#toDoForm(type='submit')
-        input(type='text' name='todo')
+    form#toDoForm(action='/', method='post', type='submit')
+        input(type='text', name='todo')
         button(type='submit') Add
     p My TODO List
     ul#todoList
     - for (let i = 0; i < tasks.length; i++)
         li= tasks[i].id + " " + tasks[i].task
-            form(action="/delete", method="post")
+            form#deleteForm(action="/delete", method="post", type='submit')
                 input(type="hidden", name="id" value=tasks[i].id)
                 input(type="submit", value="Delete")
 script(src='js/main.js')

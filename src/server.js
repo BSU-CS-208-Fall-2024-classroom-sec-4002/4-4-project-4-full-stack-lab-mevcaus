@@ -48,8 +48,10 @@ app.post('/', function (req, res) {
 app.post('/delete', function (req, res) {
   console.log('deleting todo item')
   const stmt = db.prepare('DELETE FROM todo where id = (?)')
+  console.log(req.body.id)
   stmt.run(req.body.id)
   stmt.finalize()
+  res.sendStatus(200)
 })
 
 // Start the web server
