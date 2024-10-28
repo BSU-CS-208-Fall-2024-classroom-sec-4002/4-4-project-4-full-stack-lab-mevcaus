@@ -3,10 +3,11 @@ link(rel='stylesheet' href='css/style.css')
 
 head
     title My First Full Stack
+
 body
     h1 Simple TODO APP
     p Add your TODO items here
-    form(action='/' method='POST')
+    form#toDoForm(type='submit')
         input(type='text' name='todo')
         button(type='submit') Add
     p My TODO List
@@ -16,3 +17,4 @@ body
             form(action="/delete", method="post")
                 input(type="hidden", name="id" value=tasks[i].id)
                 input(type="submit", value="Delete")
+script(src='js/main.js')

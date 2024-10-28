@@ -16,6 +16,7 @@ const app = express()
 app.use(express.static('public'))
 app.set('views', 'views')
 app.set('view engine', 'pug')
+app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.get('/', function (req, res) {
@@ -37,9 +38,11 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   console.log('adding todo item')
+  console.log(req.body)
   const stmt = db.prepare('INSERT INTO todo (task) VALUES (?)')
   stmt.run(req.body.todo)
   stmt.finalize()
+  res.sendStatus(200)
 })
 
 app.post('/delete', function (req, res) {
