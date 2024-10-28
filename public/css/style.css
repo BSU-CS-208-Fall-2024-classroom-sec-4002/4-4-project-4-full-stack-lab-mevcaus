@@ -1,6 +1,22 @@
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.backgroundImage {
+    background-image: url(../img/example1.png);
+    animation: spin 100ms linear infinite;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+}
 body{
     color: limegreen;
-    background-image: url(../img/example1.png);
 }
 button{
     background-color: rgb(252, 162, 252);
